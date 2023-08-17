@@ -1,7 +1,7 @@
 {
   "name": "epic-gallery",
   "version": "1.0.0",
-  "description": "",
+  "description": "An epic gallery",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -10,9 +10,9 @@
     "build": "tsup",
     "lint": "tsc"
   },
-  "keywords": [],
+  "keywords": ["react gallery"],
   "author": "Abu Raihan",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "keypress-tool": "^2.1.0",
     "lucide-react": "^0.268.0",
@@ -35,5 +35,9 @@
   "peerDependencies": {
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parrotfly/epic-gallery"
   }
 }
