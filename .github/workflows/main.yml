@@ -23,7 +23,7 @@ jobs:
           node-version: 16.x
 
       - name: Install Dependencies
-        run: pnpm install --frozet-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Run Tests
         run: pnpm run lint && pnpm run build
