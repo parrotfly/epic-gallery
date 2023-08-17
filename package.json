@@ -1,6 +1,6 @@
 {
   "name": "epic-gallery",
-  "version": "0.0.0-development",
+  "version": "0.0.0",
   "description": "An epic gallery",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
