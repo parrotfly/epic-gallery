@@ -1,0 +1,199 @@
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+.epic-gallery *,
+.epic-gallery ::before,
+.epic-gallery ::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: theme('borderColor.DEFAULT', currentColor); /* 2 */
+}
+.epic-gallery ::before,
+.epic-gallery ::after {
+  --tw-content: '';
+}
+/* .epic-gallery html { */
+  /* line-height: 1.5; 1 */
+  /* -webkit-text-size-adjust: 100%; 2 */
+  /* -moz-tab-size: 4; 3 */
+  /* tab-size: 4; 3 */
+  /* font-family: theme('fontFamily.sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"); 4 */
+  /* font-feature-settings: theme('fontFamily.sans[1].fontFeatureSettings', normal); 5 */
+  /* font-variation-settings: theme('fontFamily.sans[1].fontVariationSettings', normal); 6 */
+/* } */
+
+.epic-gallery hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+.epic-gallery abbr:where([title]) {
+  text-decoration: underline dotted;
+}
+.epic-gallery h1,
+.epic-gallery h2,
+.epic-gallery h3,
+.epic-gallery h4,
+.epic-gallery h5,
+.epic-gallery h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+.epic-gallery a {
+  color: inherit;
+  text-decoration: inherit;
+}
+.epic-gallery b,
+.epic-gallery strong {
+  font-weight: bolder;
+}
+.epic-gallery code,
+.epic-gallery kbd,
+.epic-gallery samp,
+.epic-gallery pre {
+  font-family: theme('fontFamily.mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace); /* 1 */
+  font-size: 1em; /* 2 */
+}
+.epic-gallery small {
+  font-size: 80%;
+}
+.epic-gallery sub,
+.epic-gallery sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.epic-gallery sub {
+  bottom: -0.25em;
+}
+.epic-gallery sup {
+  top: -0.5em;
+}
+.epic-gallery table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+.epic-gallery button,
+.epic-gallery input,
+.epic-gallery optgroup,
+.epic-gallery select,
+.epic-gallery textarea {
+  font-family: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+.epic-gallery button,
+.epic-gallery select {
+  text-transform: none;
+}
+.epic-gallery button,
+.epic-gallery [type='button'],
+.epic-gallery [type='reset'],
+.epic-gallery [type='submit'] {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+.epic-gallery :-moz-focusring {
+  outline: auto;
+}
+.epic-gallery :-moz-ui-invalid {
+  box-shadow: none;
+}
+.epic-gallery progress {
+  vertical-align: baseline;
+}
+.epic-gallery ::-webkit-inner-spin-button,
+.epic-gallery ::-webkit-outer-spin-button {
+  height: auto;
+}
+.epic-gallery [type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+.epic-gallery ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.epic-gallery ::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+.epic-gallery summary {
+  display: list-item;
+}
+.epic-gallery blockquote,
+.epic-gallery dl,
+.epic-gallery dd,
+.epic-gallery h1,
+.epic-gallery h2,
+.epic-gallery h3,
+.epic-gallery h4,
+.epic-gallery h5,
+.epic-gallery h6,
+.epic-gallery hr,
+.epic-gallery figure,
+.epic-gallery p,
+.epic-gallery pre {
+  margin: 0;
+}
+.epic-gallery fieldset {
+  margin: 0;
+  padding: 0;
+}
+.epic-gallery legend {
+  padding: 0;
+}
+.epic-gallery ol,
+.epic-gallery ul,
+.epic-gallery menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.epic-gallery dialog {
+  padding: 0;
+}
+.epic-gallery textarea {
+  resize: vertical;
+}
+.epic-gallery input::placeholder,
+.epic-gallery textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: theme('colors.gray.400', #9ca3af); /* 2 */
+}
+.epic-gallery button,
+.epic-gallery [role="button"] {
+  cursor: pointer;
+}
+.epic-gallery :disabled {
+  cursor: default;
+}
+.epic-gallery img,
+.epic-gallery svg,
+.epic-gallery video,
+.epic-gallery canvas,
+.epic-gallery audio,
+.epic-gallery iframe,
+.epic-gallery embed,
+.epic-gallery object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+.epic-gallery img,
+.epic-gallery video {
+  max-width: 100%;
+  height: auto;
+}
+.epic-gallery [hidden] {
+  display: none;
+}
