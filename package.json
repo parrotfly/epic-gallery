@@ -10,6 +10,7 @@
     "build": "tsup",
     "lint": "tsc",
     "semantic-release": "semantic-release --branches main",
+    "release": "pnpm run build && changeset publish",
     "commit": "git-cz"
   },
   "files": [
