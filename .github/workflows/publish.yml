@@ -20,8 +20,7 @@ jobs:
       # Clean up unnecessary files
       - name: Clean Up
         run: |
-          rm -rf .changeset/
-          rm -f CHANGELOG.md
+          rm -rf .changesets/
           rm -f postcss.config.js
           rm -f vite.config.js
           rm -f yarn-error.log
