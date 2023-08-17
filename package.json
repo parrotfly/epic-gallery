@@ -1,6 +1,6 @@
 {
   "name": "epic-gallery",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An epic gallery",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -10,7 +10,9 @@
     "build": "tsup",
     "lint": "tsc"
   },
-  "keywords": ["react gallery"],
+  "keywords": [
+    "react gallery"
+  ],
   "author": "Abu Raihan",
   "license": "MIT",
   "dependencies": {
