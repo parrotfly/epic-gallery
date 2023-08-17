@@ -12,6 +12,9 @@
     "semantic-release": "semantic-release --branches main",
     "commit": "git-cz"
   },
+  "files": [
+    "dist/*"
+  ],
   "keywords": [
     "react gallery"
   ],
