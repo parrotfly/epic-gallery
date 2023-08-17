@@ -9,7 +9,8 @@
     "dev": "vite",
     "build": "tsup",
     "lint": "tsc",
-    "semantic-release": "semantic-release --branches main"
+    "semantic-release": "semantic-release --branches main",
+    "commit": "git-cz"
   },
   "keywords": [
     "react gallery"
@@ -17,6 +18,7 @@
   "author": "Abu Raihan",
   "license": "MIT",
   "dependencies": {
+    "commitizen": "^4.3.0",
     "keypress-tool": "^2.1.0",
     "lucide-react": "^0.268.0",
     "swiper": "^10.1.0",
@@ -30,11 +32,12 @@
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.4",
     "autoprefixer": "^10.4.15",
+    "cz-conventional-changelog": "^3.3.0",
     "postcss": "^8.4.27",
+    "semantic-release": "^21.0.7",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.1.6",
-    "vite": "^4.4.9",
-    "semantic-release": "^21.0.7"
+    "vite": "^4.4.9"
   },
   "peerDependencies": {
     "react": ">=18.2.0",
@@ -43,5 +46,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/parrotfly/epic-gallery"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
