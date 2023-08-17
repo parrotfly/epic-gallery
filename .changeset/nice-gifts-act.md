@@ -1,5 +1,0 @@
----
-"epic-gallery": patch
----
-
-Epic
