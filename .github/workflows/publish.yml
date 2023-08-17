@@ -15,21 +15,41 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+
+      # Clean up unnecessary files
+      - name: Clean Up
+        run: |
+          rm -rf .changeset/
+          rm -f CHANGELOG.md
+          rm -f postcss.config.js
+          rm -f vite.config.js
+          rm -f yarn-error.log
+        shell: bash
+
       - uses: pnpm/action-setup@v2
         with:
           version: 7
-      - uses: actions/setup-node@v3
+
+      - uses: actions/setup-node@v2
         with:
           node-version: 18.x
           cache: "pnpm"
 
       - run: pnpm install --no-frozen-lockfile
-      - name: Create Release Pull Request or Publish
+
+      # Build your project (replace with actual build command)
+      - run: pnpm run build
+
+      # Publish only necessary files
+      - name: Publish to npm
         id: changesets
         uses: changesets/action@v1
-        with:
-          publish: pnpm run semantic-release
+        with: 
+          publish: npm pack && npm publish *.tgz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Cleanup after Publish
+        run: rm -f *.tgz
