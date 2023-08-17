@@ -1,6 +1,6 @@
 {
   "name": "epic-gallery",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "An epic gallery",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -8,9 +8,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsup",
-    "lint": "tsc"
+    "lint": "tsc",
+    "semantic-release": "semantic-release --branches main"
   },
-  "keywords": ["react gallery"],
+  "keywords": [
+    "react gallery"
+  ],
   "author": "Abu Raihan",
   "license": "MIT",
   "dependencies": {
@@ -30,7 +33,8 @@
     "postcss": "^8.4.27",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.1.6",
-    "vite": "^4.4.9"
+    "vite": "^4.4.9",
+    "semantic-release": "^21.0.7"
   },
   "peerDependencies": {
     "react": ">=18.2.0",
