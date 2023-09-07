@@ -97,7 +97,7 @@ const imageList: EpicImageProps[] = [
 ];
 
 const App = () => {
-  const [length, setLength] = useState(5)
+  const [length, setLength] = useState(14)
   
   return (
     <div

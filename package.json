@@ -25,6 +25,7 @@
     "commitizen": "^4.3.0",
     "keypress-tool": "^2.1.0",
     "lucide-react": "^0.268.0",
+    "react-zoom-pan-pinch": "^3.1.0",
     "swiper": "^10.1.0",
     "tailwind-merge": "^1.14.0",
     "tsup": "^7.2.0",

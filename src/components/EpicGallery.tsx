@@ -42,7 +42,12 @@ const EpicGallery = ({ imageList: providedImageList }: EpicGalleryProps) => {
    */
   useEffect(() => {
     const handleResize = () => {
-      setSlicedImageList(imageList.slice(0, isMobileDevice() ? 4 : 12));
+      setSlicedImageList(
+        imageList.slice(
+          0,
+          isMobileDevice() ? (imageList.length > 4 ? 3 : 4) : 12
+        )
+      );
       setGridTemplateAreas(generateGridTemplateAreas(imageList.length));
     };
 

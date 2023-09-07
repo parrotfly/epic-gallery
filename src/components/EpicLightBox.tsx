@@ -9,6 +9,7 @@ import {
   X,
 } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
+import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 import "swiper/css";
 import "swiper/css/virtual";
 import { Pagination } from "swiper/modules";
@@ -204,40 +205,59 @@ const EpicLightBox = () => {
       {/* Image view */}
       {isOpen && (
         <div className="epic-h-full epic-max-h-screen">
-          <Swiper
-            ref={slideElemRef}
-            slidesPerView={1}
-            spaceBetween={20}
-            grabCursor
-            className="epic-h-full epic-max-h-screen"
-            pagination={{ clickable: true }}
-            onSlideChange={(swiper) => {
-              updateActiveIndex(swiper.realIndex);
-            }}
-            onClick={() => {
-              updateShowControls((p) => !p);
-            }}
-            modules={[Pagination]}
+          <TransformWrapper
+            minScale={0.6}
+            maxScale={3.3}
+            centerOnInit
+            centerZoomedOut
+            smooth
+            disablePadding
           >
-            {imageList.map((image, index) => (
-              <SwiperSlide key={index} className="epic-z-[9999]">
-                <EpicImage
-                  key={index}
-                  width={image.width}
-                  height={image.height}
-                  className="epic-w-max epic-max-h-screen epic-transition-all epic-object-contain epic-scale-100"
-                  wrapperClassName="epic-flex epic-items-center epic-justify-center epic-h-full"
-                  loaderClassName="epic-w-screen"
-                  {...image}
-                  imgStyle={{
-                    transform: `scale(${activeIndex === index ? scale : 1})`,
-                    rotate: activeIndex === index ? `${rotate}deg` : "0deg",
+            {(utils) => (
+              <TransformComponent>
+                <Swiper
+                  ref={slideElemRef}
+                  slidesPerView={1}
+                  spaceBetween={20}
+                  grabCursor
+                  className="epic-h-full epic-max-h-screen"
+                  pagination={{ clickable: true }}
+                  onSlideChange={(swiper) => {
+                    updateActiveIndex(swiper.realIndex);
+
+                    utils.resetTransform(1, "easeOut");
                   }}
-                  title={image.title}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                  onClick={() => {
+                    updateShowControls((p) => !p);
+                  }}
+                  modules={[Pagination]}
+                >
+                  {imageList.map((image, index) => (
+                    <SwiperSlide
+                      key={index}
+                      className="epic-z-[9999] epic-flex epic-items-center epic-justify-center"
+                    >
+                      {/* <img src={image.src} alt="" className="epic-w-full epic-h-full" /> */}
+                      <EpicImage
+                        key={index}
+                        width={image.width}
+                        height={image.height}
+                        className="epic-w-max epic-max-h-screen epic-transition-all epic-object-contain epic-scale-100"
+                        wrapperClassName="epic-flex epic-items-center epic-justify-center epic-h-full"
+                        loaderClassName="epic-w-screen"
+                        {...image}
+                        imgStyle={{
+                          rotate:
+                            activeIndex === index ? `${rotate}deg` : "0deg",
+                        }}
+                        title={image.title}
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </TransformComponent>
+            )}
+          </TransformWrapper>
         </div>
       )}
 
