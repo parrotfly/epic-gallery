@@ -3,3 +3,12 @@
 @tailwind utilities;
 
 /* Customs styles */
+.epic-gallery .react-transform-wrapper {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.epic-gallery .react-transform-component {
+  width: 100% !important;
+  height: 100% !important;
+}
